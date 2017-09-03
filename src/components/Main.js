@@ -1,5 +1,6 @@
 import React, { Component} from 'react';
 import api from '../utils/api/api.js';
+import '../styles/Main.css';
 
 class Main extends Component {
   constructor(props) {
@@ -18,7 +19,7 @@ class Main extends Component {
   render() {
     this.test();
     return (
-      <div>
+      <div className="Main">
         <div>Hello there from Main!</div>
       </div>
     )
