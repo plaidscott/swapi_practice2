@@ -12,21 +12,17 @@ class Search extends Component {
       userSearchInput: ''
     }
     this.handleInput = this.handleInput.bind(this);
-    // this.handleSearch = this.handleSearch.bind(this);
+    this.handleSearch = this.handleSearch.bind(this);
   }
 
   handleInput ( e ) {
-    console.log('handleinput is being triggered', e.target.value);
+    e.preventDefault();
     this.setState({ userSearchInput: e.target.value});
   }
   handleSearch ( e ) {
     if(e.keyCode === 13) {
       e.preventDefault();
-      var textToSearch = e.target.value
-      console.log('textToSearch in handleSearch in Search.js', textToSearch, this.state.userSearchInput);
-      console.log('e.target.value in handleSearch in Search.js', e);
-
-      api.userSearch( textToSearch )
+      api.userSearch(this.state.userSearchInput)
         .then( response => {
           console.log('response in handleSearch, api.userSearch', response)
         })
@@ -35,7 +31,6 @@ class Search extends Component {
   render() {
     return (
       <div className="Search">
-        <form>
           <FormGroup
               controlId="formBasicText"
           >
@@ -49,7 +44,6 @@ class Search extends Component {
                 value={this.state.userSearchInput}
               ></FormControl>
           </FormGroup>
-        </form>
       </div>
     );
   }
