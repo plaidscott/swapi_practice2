@@ -12,7 +12,6 @@ module.exports = {
       })
   },
   userSearch: ( textToSearch ) => {
-    console.log('textToSearch in api', textToSearch);
     return axios.get('people?q=' + textToSearch)
       .then(response => {
         return response.data

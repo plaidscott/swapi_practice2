@@ -1,10 +1,11 @@
 .Cardholder {
-    height: 50vw;
+    height: 600px;
     width: 75vw;
     background: url("../media/rebelSymbol.jpg");
     border-width: 5px;
     border-color: green;
-    border-radius: 5%;
+    border-radius: 8%;
     margin: auto;
-    background-position: -325px
+    background-position: -325px;
+    padding: 20px;
 }

@@ -25,6 +25,7 @@ class Search extends Component {
       api.userSearch(this.state.userSearchInput)
         .then( response => {
           console.log('response in handleSearch, api.userSearch', response)
+          this.props.sendResponseToCard(response)
         })
     }
   }
