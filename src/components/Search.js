@@ -20,16 +20,27 @@ class Search extends Component {
     this.setState({ userSearchInput: e.target.value});
   }
   handleSearch ( e ) {
-    if(e.keyCode === 13) {
+    if(e.keyCode === 13 && this.state.userSearchInput.length !== 0) {
       e.preventDefault();
-      api.userSearch(this.state.userSearchInput)
+      this.props.sendUserSearchInputToMain(this.state.userSearchInput)
+      api.userSearch(this.state.userSearchInput, this.props.currentPageNumber)
         .then( response => {
           console.log('response in handleSearch, api.userSearch', response)
           this.props.sendResponseToCard(response)
         })
     }
   }
+
+  componentWillMount(){
+    api.initialData()
+      .then( response => {
+        console.log('response in handleSearch, api.initialData', response)
+        this.props.sendResponseToCard(response)
+      })
+  }
+
   render() {
+    console.log('in search.js, this.props', this.props);
     return (
       <div className="Search">
           <FormGroup

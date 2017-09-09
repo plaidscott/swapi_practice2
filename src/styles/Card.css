@@ -1,6 +1,6 @@
 .Card {
   height: 220px;
-  width: 175px;
+  width: 200px;
   background-color: black;
   border-radius: 10px;
   border-width: 5px;
@@ -9,4 +9,33 @@
   margin-top: 20px;
   margin-left: 20px;
   color: white;
+  display: inline-block;
+  opacity: .80;
+}
+
+.InitialCard {
+  height: 220px;
+  width: 350px;
+  background-color: black;
+  border-radius: 10px;
+  border-width: 5px;
+  border-color: black;
+  border-style: solid;
+  margin-top: 60px;
+  margin-left: 20px;
+  color: white;
+  display: inline-block;
+  opacity: .80;
+  position: relative;
+  transform: translateY(50%);
+}
+
+.edit {
+  height: 15px;
+  width: 15px;
+  background-size: contain;
+}
+
+.inline-block {
+  display: inline-block
 }

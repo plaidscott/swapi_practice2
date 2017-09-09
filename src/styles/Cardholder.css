@@ -6,6 +6,24 @@
     border-color: green;
     border-radius: 8%;
     margin: auto;
-    background-position: -325px;
+    background-position: -30px;
     padding: 20px;
+    position: relative;
+}
+
+.links {
+  position: absolute;
+  bottom: 0;
+  margin: auto;
+}
+
+.links a {
+  margin-left: 15vw;
+  display: inline-block;
+}
+
+.centerText {
+  position: relative;
+  margin-top: 32px;
+  transform: translateY(50%);
 }
