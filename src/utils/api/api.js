@@ -2,7 +2,7 @@ var axios = require ('axios');
 
 module.exports = {
   initialData: () => {
-    return axios.get('people?_page=1&q=luke')
+    return axios.get('people?_page=1&q=blue')
       .then(response => {
         return response
       })
@@ -30,6 +30,19 @@ module.exports = {
       .catch(error => {
         console.log('error from api.js planetSearch', error)
         return error;
+      })
+  },
+  editName: (personObjectUpdatedName) => {
+    return axios.put('/people/' + personObjectUpdatedName.id,
+      personObjectUpdatedName,
+      {"headers": { "Content-Type": "application/json"}}
+    )
+      .then( response => {
+        console.log('response in editName in api.js', response);
+        return response;
+      })
+      .catch(error => {
+        console.log('error from api.js edtiName', error);
       })
   }
 }

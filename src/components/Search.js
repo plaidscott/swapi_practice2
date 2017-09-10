@@ -25,7 +25,6 @@ class Search extends Component {
       this.props.sendUserSearchInputToMain(this.state.userSearchInput)
       api.userSearch(this.state.userSearchInput, this.props.currentPageNumber)
         .then( response => {
-          console.log('response in handleSearch, api.userSearch', response)
           this.props.sendResponseToCard(response)
         })
     }
@@ -34,13 +33,11 @@ class Search extends Component {
   componentWillMount(){
     api.initialData()
       .then( response => {
-        console.log('response in handleSearch, api.initialData', response)
         this.props.sendResponseToCard(response)
       })
   }
 
   render() {
-    console.log('in search.js, this.props', this.props);
     return (
       <div className="Search">
           <FormGroup
