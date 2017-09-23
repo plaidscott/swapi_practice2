@@ -1,0 +1,10 @@
+.Search {
+  height: 95px;
+  width: 32.5vw;
+  background-color: black;
+  border-width: 5px;
+  border-color: green;
+  border-radius: 5%;
+  margin: auto;
+  color: white;
+}
